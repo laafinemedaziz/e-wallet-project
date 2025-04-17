@@ -1,0 +1,424 @@
+/* header */
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap");
+
+header {
+    background: none;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+/* card des lien du header */
+.nav-card {
+    background: #fdfdfd;
+    border-radius: 12px 4px 12px 4px;
+    padding: 10px 35px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 450px;
+}
+
+/* les liens du header */
+.nav-card a {
+    text-decoration: none;
+    color: #424040;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Urbanist", sans-serif;
+}
+
+/* la liste des liens du header */
+.nav-card ul {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+
+/* boutton login */
+.btn-login {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+}
+
+/* boutton signup header */
+.btn-signup {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #ff43ba, #6c5df8);
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 6px 15px;
+    height: auto;
+
+}
+
+/* modification des elements du card */
+
+/* text principale */
+.main-text {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    color: #001063;
+    margin-top: 70px;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+
+/* paragraphe sous le titre*/
+.main-card p {
+    font-family: "Urbanist", sans-serif;
+    font-size: 10px;
+    color: #424040;
+    margin-left: 15px;
+    margin-top: 40px;
+    text-align: justify;
+}
+
+
+/* image profile a gauche du paragraphe */
+.main-card img {
+    max-width: 100%;
+    height: auto;
+    width: 80px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 15;
+}
+
+/* input du mail */
+.main-card input {
+    background-color: #ffffff;
+    padding: 12px;
+    max-width: 250px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    margin-top: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+
+/* Bouton Subscribe */
+.btn-subscribe {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #ff43ba, #6c5df8);
+    border-radius: 15px;
+    font-size: 15px;
+    margin-top: 50px;
+    width: 150px;
+}
+
+/* placement de l'image de student */
+.main-card img.student-image {
+    width: 455px;
+    max-width: 100%;
+    height: auto;
+    margin-left: 70px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+/* le premier et le 2eme titre  */
+.skills-title {
+    position: relative;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 800;
+    color: #00255e;
+    font-size: 2.5rem;
+    z-index: 1000;
+    margin-top: 30px;
+}
+
+/* style du card violet */
+.custom-card {
+    background-color: #5768be;
+    color: white;
+    border-radius: 30px !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    height: 300px;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+/* le text dans la card violet */
+.custom-card .card-text {
+    text-align: left;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Style de l'image (image2) */
+.custom-image {
+    max-width: 100%;
+    height: auto;
+    width: 350px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-left: 15px;
+    position: relative;
+    z-index: 50000;
+}
+
+/* style de la card des etapes */
+.maincard {
+    background: linear-gradient(to right, #fdfffd, #adfcff);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 400px;
+    z-index: 1000;
+}
+
+/* style de la sous-card  */
+.step-card {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: none;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 45px;
+    z-index: 1000;
+
+}
+
+/* style de nombres dans les sous-cards */
+.step-number {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #00255e;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* style des titres des sous-cards */
+.step-title {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #00255e;
+    margin-top: 0;
+    padding-left: 10px;
+    display: inline-block;
+    margin-right: 15px;
+    padding-left: 10px;
+}
+
+/* style de description des sous-cards */
+.step-description {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #424040;
+    margin-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Espacement composanst de la card */
+.row .col-md-2 {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* cartes contiens les faqs */
+.faq-card {
+    background-color: #cbc8ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 40px rgba(211, 155, 241, 0.8);
+    min-height: 300px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1001;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 170px;
+
+}
+
+/* style d'espace des questions */
+.faq-item {
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}
+
+/* Style pour les questions */
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Urbanist", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #00255d;
+    margin-left: 10px;
+    margin-bottom: -5px;
+    cursor: pointer;
+}
+
+/* Style pour l'arrow */
+.arrow {
+    font-size: 1.5rem;
+    color: #00255d;
+    cursor: pointer;
+}
+
+/* Ligne sous chaque question */
+.line {
+    border-bottom: 1px solid #00255d;
+    margin-top: 1px;
+}
+
+/* style pour le footer  */
+.custom-footer {
+    background-color: #383d38;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 15px 30px;
+    height: 100px;
+    margin-top: 0px;
+    position: relative;
+    z-index: 10000;
+    opacity: 0.98;
+    margin-top: 40px;
+}
+
+/* style pour les composants de footer*/
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Texte du footer */
+.footer-text {
+    font-size: 0.8rem;
+    color: white;
+    font-family: "Urbanist", sans-serif;
+    margin-top: 15px;
+}
+
+
+/* Icônes des réseaux sociaux */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Ajout de la responsivité */
+@media (max-width: 768px) {
+
+    /* Image de la première carte sous le texte principal en mode responsive */
+    .main-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 900px;
+        margin-top: 20px;
+    }
+
+    .main-card .main-text {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .main-card img.student-image {
+        margin: 20px 0 0 0;
+        width: 80%;
+    }
+}
+
+/* Ajout de la responsivité */
+@media (max-width: 1061px) and (min-width: 769px) {
+
+    .main-card {
+        margin-top: -300px;
+
+    }
+
+    .main-card .main-text {
+        font-size: 25px;
+    }
+
+    .main-card .p {
+        font-size: 50px;
+    }
+}
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(to top left, #c0f9d5, #b8b6ff, #e8c9c9);
+}
+
+.answer {
+    margin-top: 0.5rem;
+    padding-left: 0.6rem;
+    font-size: 0.9rem;
+    color: #752cf1;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+    padding-bottom: 0.4rem;
+    font-weight: bold;
+
+
+}
+
+
+/* Animation pour l'apparition de la réponse */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

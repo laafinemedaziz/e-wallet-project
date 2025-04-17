@@ -1,0 +1,219 @@
+/* Conteneur principal card avec fond blanc (hauteur réduite) */
+.custom-card {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Div contenant l'image avec un fond en dégradé */
+.col-md-4 {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0D137A, #95959A);
+    width: calc(33.33% + 0.5cm);
+    height: 560px;
+    margin-left: 33px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Blurred image */
+.blurred-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-left: -40px;
+    margin-bottom: -14px;
+}
+
+
+
+/* Div pour le contenu à droite (formulaire) */
+.col-md-7 {
+    border-radius: 15px;
+    background-color: #F4F6F9 !important;
+    width: calc(57.14% + 0.2cm);
+    height: 560px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Labels de formulaire */
+.form-label {
+    color: #424242;
+}
+
+/* Champ de saisie */
+.input-field {
+    background-color: #FFFFFF;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #424242;
+    border-color: #999999;
+    padding-right: 30px;
+    /* Espace pour l'icône à droite */
+    width: 100%;
+    margin-top: -10px;
+}
+
+.login-header {
+    margin-top: -40px;
+    font-weight: 600;
+}
+
+/* Formulaire (réduction de taille) */
+form {
+    width: 70%;
+    /* Réduit la taille du formulaire */
+    max-width: 400px;
+    /* Fixe une largeur maximale pour le formulaire */
+    margin-left: 80px;
+    margin-top: 50px;
+
+}
+
+/* Lien mot de passe oublié */
+.forgot-password {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    text-decoration: none;
+    color: #424242;
+    margin-top: -12px;
+}
+
+/* Bouton de connexion */
+.login-btn {
+    height: 35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    background-color: #2A2A2A;
+    border-color: #2A2A2A;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Garde la couleur initiale lorsque le bouton est cliqué */
+.login-btn:active,
+.login-btn:focus {
+    background-color: #1A1A1A !important;
+    border-color: #1A1A1A !important;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Changer la couleur du bouton lorsque l'on survole */
+.login-btn:hover {
+    background-color: #3a3a3a;
+}
+
+/* Bouton de connexion via Google */
+.continue-google-btn {
+    height: 35px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Change la couleur du bouton et l'ombre au survol */
+.continue-google-btn:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1.03);
+}
+
+/* Effet lors du clic pour un petit effet de profondeur */
+.continue-google-btn:active {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: rgb(0, 0, 0);
+}
+
+
+/* Icone œil à droite du champ de saisie, à l'intérieur */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* L'icône de l'œil positionnée à droite */
+.bieye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #424242;
+}
+
+/* Espacement réduit entre les composants */
+.button>* {
+    margin-bottom: 2px !important;
+}
+
+/* Style de l'élément conteneur de la page */
+:host {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #BAFCFF, #DACCD3);
+}
+
+
+/* .login-header-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1050;
+  }
+  
+  .login-header-bar img {
+    height: 35px;
+  }
+  
+  .btn-close-header {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-close-header:hover {
+    background-color: #f0f0f0;
+  }
+   */

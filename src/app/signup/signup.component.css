@@ -1,0 +1,175 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #BAFCFF, #DACCD3);
+}
+
+/* Conteneur principal card avec fond blanc (hauteur réduite) */
+.custom-card {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    padding: 10px;
+}
+
+/* Div contenant l'image avec un fond en dégradé */
+.col-md-4 {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to top, #FEFFFD, #0D137A);
+    padding: 200px;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+.blurred-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    bottom: 0;
+}
+
+
+.col-md-7 {
+    border-radius: 15px;
+    background-color: #F4F6F9 !important;
+    height: 560px;
+    width: calc(50.33% + 2.2cm);
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+/* Titre principal du formulaire */
+.sign-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #424242;
+    text-align: center !important;
+}
+
+/* Ajuster la hauteur et le padding des inputs */
+.input-field {
+    border-color: #999999;
+    height: 30%;
+    width: 100%;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #424242;
+
+}
+
+/* Labels bien alignés */
+.form-label {
+    color: #424242;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+/* Espacement plus petit entre les blocs */
+.mb-3 {
+    margin-bottom: 2px !important;
+}
+
+/* Bouton de connexion */
+.sign-btn {
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    background-color: #2A2A2A;
+    border-color: #2A2A2A;
+    width: 80%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.sign-btn:active {
+    background-color: rgba(0, 0, 0);
+    /* Couleur rouge lors du clic */
+    border-color: rgb(0, 0, 0);
+    /* Bordure rouge lors du clic */
+}
+
+/* Bouton de connexion via Google */
+.continue-google-btn {
+    height: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ffffff;
+    width: 80%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+}
+
+
+.button {
+    margin-top: 10px;
+}
+
+.sign-btn {
+    margin-bottom: 4px !important;
+}
+
+.text-center.my-1 {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+.continue-google-btn {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+.text-center.mt-1 {
+    margin-top: 4px !important;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.form-check-label {
+    font-size: 13px;
+}
+
+
+
+.is-invalid {
+    border-color: red;
+}
+
+/* Style pour les messages d'erreur */
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875rem !important;
+    margin-top: 0.25rem !important;
+    padding-left: 10px !important;
+    font-weight: 500 !important;
+}
+
+/* Style pour les champs invalides */
+.input-field.ng-invalid.ng-touched {
+    border-color: #dc3545;
+    /* Bordure rouge pour les champs invalides */
+    background-color: #f8d7da;
+    /* Fond rose clair pour les champs invalides */
+}

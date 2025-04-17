@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "user@example.com",
+      "password": "password123",
+      "token": "mocked-token-123"
+    },
+    {
+      "id": "4f26",
+      "newPassword": "http://localhost:3002/usersS"
+    },
+    {
+      "id": "28a6",
+      "newPassword": "Omar@123"
+    }
+  ]
+}

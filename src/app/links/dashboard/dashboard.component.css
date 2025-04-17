@@ -1,0 +1,531 @@
+/* --- Conteneur principal --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@...');
+
+.container-fluid {
+    padding-right: -5px;
+    padding-left: 80px;
+}
+
+.header-icons i {
+    font-size: 24px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+/* --- Titre 'Hello Omar' --- */
+.hello-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #000;
+    margin-left: -10px;
+}
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dfddff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+
+.dashboard-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    /* Réduit la hauteur de la section avec opacité */
+    background-color: #282828;
+    opacity: 0.5;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 2;
+}
+
+.image-icon-section {
+    position: absolute;
+    bottom: 15px;
+    left: 35px;
+    display: flex;
+    gap: 15px;
+    z-index: 3;
+}
+
+.image-icon {
+    width: 40px;
+    /* Ajustez la taille des images */
+    height: auto;
+}
+
+.wallet-icon {
+    width: 50px;
+    /* Taille spécifique pour l'image du portefeuille */
+}
+
+.text-section {
+    flex: 1;
+    font-size: 24px;
+    /* Taille de texte un peu réduite */
+    font-weight: 600;
+    /* Inter semi-bold */
+    font-family: "Inter", sans-serif, bold;
+    color: black;
+    z-index: 3;
+    /* Le texte est au-dessus de l'élément avec opacité */
+    margin-bottom: 28px;
+    margin-left: 20px;
+}
+
+.image-section {
+    flex-shrink: 0;
+    width: 150px;
+    /* Réduit la taille de l'image */
+    height: 150px;
+    /* Réduit la taille de l'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -5px;
+    /* Ajuste la marge pour aligner l'image */
+    z-index: 1;
+    /* Met l'image derrière la section avec opacité */
+}
+
+.illustration {
+    width: 120px;
+    /* Taille réduite de l'image */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* --- Transactions --- */
+.transactions-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+}
+
+.see-all {
+    text-decoration: none;
+    color: #6911C7;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+/* --- Liste des transactions --- */
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    min-width: 95%;
+    /* Force la largeur maximale */
+    margin-bottom: 50px;
+
+}
+
+/* --- Une seule transaction --- */
+.transaction-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    border-radius: 8px;
+    background: transparent;
+
+}
+
+
+.transaction-logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.transaction-info {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.transaction-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0px;
+    /* Réduit la marge entre le nom et la date */
+    margin-top: 12px;
+}
+
+.transaction-date {
+    font-size: 15px;
+    font-weight: 400;
+    color: #767676;
+    margin-top: 0px;
+    /* Réduit l'espace au-dessus de la date */
+}
+
+/* --- Montant transaction --- */
+.transaction-amount {
+    text-align: right;
+    margin-top: 12px;
+
+}
+
+.amount-ct {
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 0px;
+}
+
+.amount-dt {
+    font-size: 15px;
+    font-weight: 400;
+    color: #767676;
+    margin-top: -15px;
+}
+
+
+/* --- Transfer Calculator --- */
+.transfer-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 35px;
+}
+
+/* --- Transfer Calculator --- */
+.transfer-card {
+    background: linear-gradient(to right, #baa3e3, #C065FB);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 5px;
+    min-width: 80%;
+}
+
+.transfer-wrapper {
+    display: flex;
+    justify-content: center;
+    /* centre horizontalement */
+    align-items: center;
+    min-width: 105%;
+
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.transfer-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+}
+
+
+
+/* --- Partie Droite (Info Cards) --- */
+.info-card {
+    background-color: #1C1C1E;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    margin-top: -10px;
+}
+
+.col-md-8 {
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+/* Styles communs pour les deux cartes */
+.info-card,
+.wallet-card {
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.card-header {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.profile-icon {
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.full-name {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.user-type {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.email {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    color: #767676;
+    margin-bottom: 0;
+}
+
+/* Polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.col-md-4 {
+    margin-left: 20px;
+}
+
+.row {
+    margin: 0;
+}
+
+/* Optimisation de l'espacement vertical */
+.col-xs-12:first-child {
+    margin-top: 15px;
+}
+
+.col-xs-12:last-child {
+    margin-bottom: 15px;
+}
+
+
+.flag-icon,
+.coin-icon {
+    position: absolute;
+    right: 35px;
+    /* Adjusted to make space for the text */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.currency-text {
+    position: absolute;
+    right: 5px;
+    /* Adjusted the position of the text */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Dividing image into top and bottom halves */
+.image-divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* Added to position the image in relation to the parent */
+}
+
+.Equivalent {
+    position: absolute;
+    top: 50%;
+    /* Vertically center the image */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the image horizontally and vertically */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+/* Wallet Card */
+.wallet-card {
+    background: linear-gradient(to top left, #C800FA, #C269FC, #DACCD3);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 160px;
+    position: relative;
+    /* Permet de positionner l’image par rapport à cette div */
+    overflow: hidden;
+    /* Évite les débordements */
+
+}
+
+.wallet-small-img {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin-right: -50px !important;
+    width: 100%;
+    /* Ajuste la taille */
+    height: auto;
+}
+
+/* Header */
+.wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.wallet-header h5 {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+
+}
+
+.round-icon {
+    background: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+    cursor: pointer;
+
+}
+
+/* Balance Section */
+.wallet-body {
+    text-align: center;
+    z-index: 1000;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+
+.current-balance-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    /* Aligner les éléments verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
+    gap: 5px;
+    /* Réduire l’espace entre le texte et l’icône */
+    cursor: pointer;
+
+}
+
+.balance {
+    font-size: 24px;
+    margin: 0;
+    /* Supprimer tout espace vertical inutile */
+    margin-right: 10px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+
+
+}
+
+.coin {
+    width: 33px;
+    height: 33px;
+    margin: 0;
+    /* Supprimer toute marge par défaut */
+    display: inline-block;
+    /* S'assurer qu'il reste bien en ligne */
+    cursor: pointer;
+}
+
+.wallet-footer {
+    display: flex;
+    gap: 19px;
+    /* Réduit l'espace entre les icônes */
+    justify-content: center;
+    /* Centre les éléments sans trop d'écart */
+    margin-top: 10px;
+    /* Réduit la marge du haut */
+    text-align: center;
+    z-index: 1000;
+}
+
+.wallet-action {
+    background: rgba(255, 255, 255, 0.3);
+    width: 35px;
+    height: 35px;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.wallet-action {
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.wallet-action:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,302 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <!-- Card Container -->
+  <div class="card shadow-lg custom-card red-card">
+    <div class="row no-gutters">
+      <!-- Section Image (gauche) -->
+      <div class="col-md-4">
+        <img src="sign.png" alt="Background" class="img-fluid blurred-image" />
+      </div>
+
+      <!-- Section Formulaire (droite) -->
+      <div
+        class="col-md-7 d-flex align-items-center justify-content-center p-5 bg-light rounded-end"
+      >
+        <div
+          class="w-100 d-flex flex-column justify-content-center align-items-center"
+        >
+          <h3 class="text-dark mb-4 sign-header">Welcome to Clevory!</h3>
+
+          <form
+            class="form"
+            style="width: 80%"
+            (ngSubmit)="onSubmit()"
+            #signupForm="ngForm"
+          >
+            <div
+              *ngIf="errorMessages.length > 0"
+              class="toast-container position-fixed top-0 end-0 p-3"
+            >
+              <div
+                class="toast text-bg-danger show"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div class="toast-body">
+                  <div class="d-flex gap-3 align-items-center">
+                    <i class="fa-solid fa-circle-exclamation fa-lg"></i>
+                    <div
+                      class="flex-grow-1 d-flex justify-content-between align-items-center"
+                    >
+                      <!-- Affiche tous les messages -->
+                      <div class="fw-semibold">
+                        <div *ngFor="let message of errorMessages">
+                          {{ message }}
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        aria-label="Close"
+                        (click)="errorMessages = []"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Full Name -->
+            <div class="mb-3 w-100">
+              <label for="fullName" class="form-label text-start"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                class="form-control input-field"
+                id="fullName"
+                name="fullName"
+                [(ngModel)]="user.name"
+                placeholder="Your Name"
+                required
+                #fullName="ngModel"
+              />
+              <!-- <div
+                *ngIf="showErrors && fullName.invalid && fullName.touched"
+                class="text-danger"
+              >
+                {{ nameErrorMessage }}
+              </div> -->
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3 w-100">
+              <label for="email" class="form-label text-start"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control input-field"
+                id="email"
+                name="email"
+                [(ngModel)]="user.email"
+                placeholder="xyz@example.com"
+                required
+                #email="ngModel"
+              />
+              <!-- <div
+                *ngIf="showErrors && email.invalid && email.touched"
+                class="text-danger"
+              >
+                {{ emailError ? emailErrorMessage : "" }}
+              </div> -->
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3 w-100">
+              <label for="password" class="form-label text-start"
+                >Password</label
+              >
+              <div class="position-relative">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  class="form-control input-field pr-5"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  placeholder="*************"
+                  required
+                  #password="ngModel"
+                />
+                <i
+                  [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"
+                  class="bi position-absolute"
+                  style="
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                  "
+                  (click)="togglePasswordVisibility('password')"
+                ></i>
+              </div>
+              <!-- <div
+                *ngIf="showErrors && password.invalid && password.touched"
+                class="text-danger"
+              >
+                {{ passwordError ? passwordErrorMessage : "" }}
+              </div> -->
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3 w-100">
+              <label for="confirmPassword" class="form-label text-start"
+                >Confirm Password</label
+              >
+              <div class="position-relative">
+                <input
+                  [type]="showConfirmPassword ? 'text' : 'password'"
+                  class="form-control input-field pr-5"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  [(ngModel)]="user.confirmPassword"
+                  placeholder="*************"
+                  required
+                  #confirmPassword="ngModel"
+                />
+                <i
+                  [ngClass]="showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"
+                  class="bi position-absolute"
+                  style="
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                  "
+                  (click)="togglePasswordVisibility('confirmPassword')"
+                ></i>
+              </div>
+              <!-- <div
+                *ngIf="
+                  showErrors &&
+                  confirmPassword.invalid &&
+                  confirmPassword.touched
+                "
+                class="text-danger"
+              >
+                {{ confirmPasswordErrorMessage }}
+              </div> -->
+            </div>
+
+            <!-- Type and Company Code -->
+            <div class="row align-items-center" style="width: 105%">
+              <div class="col-md-6 mb-3">
+                <label for="type" class="form-label">Type</label>
+                <select
+                  class="form-control input-field"
+                  id="type"
+                  name="type"
+                  [(ngModel)]="user.type"
+                  required
+                  #type="ngModel"
+                  style="height: 30px"
+                >
+                  <option value="client">Client</option>
+                  <option value="hrCompany">HR Company</option>
+                  <option value="employee">Employee</option>
+                </select>
+                <!-- <div
+                  *ngIf="showErrors && type.invalid && type.touched"
+                  class="text-danger"
+                >
+                  {{ termsErrorMessage }}
+                </div> -->
+              </div>
+
+              <!-- Company Code -->
+              <div
+                *ngIf="user.type === 'hrCompany' || user.type === 'employee'"
+                class="col-md-6 mb-3"
+              >
+                <label for="companyCode" class="form-label">Company Code</label>
+                <input
+                  type="text"
+                  class="form-control input-field"
+                  id="companyCode"
+                  name="companyCode"
+                  [(ngModel)]="user.companyCode"
+                  placeholder="Company Code"
+                />
+              </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-check mb-3">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="terms"
+                name="terms"
+                [(ngModel)]="user.termsAccepted"
+                required
+                #terms="ngModel"
+              />
+              <label class="form-check-label" for="terms"
+                >I agree to Terms & Conditions</label
+              >
+              <!-- <div
+                *ngIf="showErrors && terms.invalid && terms.touched"
+                class="text-danger"
+              >
+                {{ termsErrorMessage }}
+              </div> -->
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button w-100">
+              <button
+                type="submit"
+                class="btn btn-primary sign-btn mb-1 w-100"
+                (click)="showErrors = true"
+                [disabled]="isSubmitting"
+              >
+                <span *ngIf="isSubmitting">Signing Up...</span>
+                <span *ngIf="!isSubmitting">Sign Up</span>
+              </button>
+
+              <div class="text-center my-1">Or</div>
+
+              <button
+                type="button"
+                class="btn btn-outline-dark continue-google-btn w-100"
+              >
+                <img
+                  src="google (1).png"
+                  alt="Google"
+                  class="me-2"
+                  style="width: 15px; height: auto; margin-right: 10px"
+                />
+                Continue with Google
+              </button>
+
+              <div class="text-center mt-1">
+                <p
+                  style="
+                    font-size: 12px;
+                    color: #676767;
+                    display: inline;
+                    margin: 0;
+                  "
+                >
+                  Already have an account?
+                </p>
+                <a
+                  routerLink="/login"
+                  class="signup"
+                  style="
+                    font-size: 12px;
+                    color: #171717;
+                    font-weight: bold;
+                    margin-left: 4px;
+                  "
+                >
+                  Log In
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

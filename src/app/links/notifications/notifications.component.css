@@ -1,0 +1,58 @@
+.card.custom-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-tab {
+    background-color: #5678b1;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-tab.active {
+    background-color: #ffffff;
+    color: #5678b1;
+    border: 1px solid #5678b1;
+}
+
+.bg-purple {
+    background-color: #f3e8ff;
+}
+
+.bg-red {
+    background-color: #ffe3e3;
+}
+
+.icon {
+    font-size: 1.4rem;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon.success {
+    color: #38a169;
+}
+
+.icon.offer {
+    color: #6366f1;
+}
+
+.dot-purple {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #7e22ce;
+}

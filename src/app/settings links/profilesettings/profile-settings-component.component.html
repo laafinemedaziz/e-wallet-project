@@ -1,0 +1,54 @@
+<!-- Titre Section -->
+<div class="mb-4">
+  <h5 class="fw-bold mb-1">Profile Information</h5>
+  <p class="text-muted mb-0">Update your account profile information</p>
+</div>
+
+<!-- Avatar + Form Layout -->
+<div class="row g-4 align-items-start">
+  <!-- Avatar à gauche -->
+  <div class="col-md-3 d-flex flex-column align-items-center text-center">
+    <img
+      src="https://via.placeholder.com/100"
+      class="rounded-circle mb-3"
+      alt="Avatar"
+    />
+    <button class="btn btn-outline-secondary btn-sm">Change Avatar</button>
+  </div>
+
+  <!-- Formulaire à droite -->
+  <div class="col-md-9">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" class="form-control" value="John" />
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" class="form-control" value="Doe" />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        value="john.doe@example.com"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input
+        type="text"
+        id="phone"
+        class="form-control"
+        value="+1 (555) 123-4567"
+      />
+    </div>
+
+    <button class="btn btn-primary px-4">Save Changes</button>
+  </div>
+</div>

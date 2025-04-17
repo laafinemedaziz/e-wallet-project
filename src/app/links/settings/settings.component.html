@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <!-- Titre -->
+  <h2 class="fw-bold mb-4">Settings</h2>
+
+  <div class="card p-4 shadow-sm rounded">
+    <h5 class="mb-3"><i class="bi bi-gear me-2"></i>Settings</h5>
+
+    <!-- Onglets -->
+    <div
+      class="d-flex justify-content-between align-items-center mb-4 bg-body-tertiary rounded"
+      style="background-color: #f1f5f9"
+    >
+      <a
+        routerLink="profile"
+        routerLinkActive="active-tab"
+        class="flex-fill text-center py-2 small nav-tab"
+      >
+        <i class="bi bi-person"></i> Profile
+      </a>
+      <a
+        routerLink="notifications"
+        routerLinkActive="active-tab"
+        class="flex-fill text-center py-2 small nav-tab"
+      >
+        <i class="bi bi-bell"></i> Notifications
+      </a>
+      <a
+        routerLink="security"
+        routerLinkActive="active-tab"
+        class="flex-fill text-center py-2 small nav-tab"
+      >
+        <i class="bi bi-shield-lock"></i> Security
+      </a>
+      <a
+        routerLink="payment"
+        routerLinkActive="active-tab"
+        class="flex-fill text-center py-2 small nav-tab"
+      >
+        <i class="bi bi-credit-card"></i> Payment Methods
+      </a>
+      <a
+        routerLink="support"
+        routerLinkActive="active-tab"
+        class="flex-fill text-center py-2 small nav-tab"
+      >
+        <i class="bi bi-info-circle"></i> Help & Support
+      </a>
+    </div>
+
+    <!-- Contenu dynamique -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<style>
+  .nav-tab {
+    background-color: #f1f5f9;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+    font-size: 13px;
+  }
+
+  .nav-tab:hover {
+    background-color: #e2e8f0;
+    color: #000;
+  }
+
+  .active-tab {
+    background-color: white !important;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+</style>

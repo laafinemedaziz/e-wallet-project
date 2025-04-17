@@ -1,0 +1,366 @@
+<!-- Header -->
+
+<header class="py-4">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo" class="header-logo" />
+    <style>
+      .header-logo {
+        width: 70px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        padding: 0px;
+      }
+    </style>
+    <div class="nav-card shadow-lg">
+      <ul
+        class="list-unstyled d-flex mb-0 justify-content-center align-items-center"
+      >
+        <li>
+          <a href="#explore">Explore</a>
+        </li>
+        <li><a href="#faq">Faqs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div style="z-index: 1000">
+      <button
+        routerLink="/login"
+        class="btn btn-transparent mx-2 btn-sm btn-login"
+      >
+        Log In
+      </button>
+      <button
+        routerLink="/signup"
+        class="btn btn-signup text-white btn-sm btn-urbanist"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<section
+  class="d-flex justify-content-center align-items-center vh-100 flex-column"
+>
+  <div
+    class="main-card shadow-lg p-5 d-flex"
+    style="
+      max-width: 1200px;
+      height: 550px;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background: #eae0f3;
+      border-radius: 35px;
+    "
+  >
+    <!-- Left Section: Texte, Image Profile, Input, et Bouton -->
+    <div class="left-section">
+      <!-- Texte Principal -->
+      <h1 class="main-text">
+        Level Up Your Skills,<br />
+        Anytime, Anywhere
+      </h1>
+
+      <!-- Petit texte avec image profile -->
+      <div class="d-flex align-items-center">
+        <img src="profile.png" alt="Icon" class="icon-text me-2 profile-img" />
+        <p class="text-muted small-text">
+          Whether you're a beginner or an expert, our courses in Web
+          Development, Cloud Computing,<br />
+          Digital Marketing, and more will help you stay ahead. Learn at your
+          own pace, anytime,<br />
+          anywhere!
+        </p>
+      </div>
+      <!-- Formulaire d'abonnement -->
+      <div class="d-flex align-items-center">
+        <input
+          type="email"
+          class="form-control me-2"
+          placeholder="E-mail"
+          style="background-color: #ffffff"
+        />
+        <button class="btn btn-subscribe align-self-center">Subscribe</button>
+      </div>
+    </div>
+
+    <!-- Right Section: Image Student -->
+    <div class="right-section">
+      <img src="student.png" alt="Student Image" class="student-image" />
+    </div>
+  </div>
+
+  <!-- Title Underneath -->
+  <section class="text-center py-4" style="z-index: 11">
+    <h2 class="skills-title" style="margin-bottom: 50px">
+      Grow your skills, grow your future
+    </h2>
+  </section>
+</section>
+<div class="container-ronde">
+  <img src="ronde.png" alt="Image" class="image-ronde" />
+</div>
+<style>
+  .container-ronde {
+    text-align: right;
+    z-index: -10000;
+  }
+
+  .image-ronde {
+    width: 40%;
+    height: auto;
+    border-radius: 0px;
+    margin-top: -995px;
+  }
+</style>
+<!-- New Section with Image on Left and Card on Right -->
+<section
+  id="explore"
+  class="d-flex justify-content-center align-items-center vh-100"
+>
+  <div
+    class="d-flex justify-content-center align-items-center"
+    style="
+      max-width: 1200px;
+      width: 100%;
+      flex-direction: row;
+      margin-top: 40px;
+    "
+  >
+    <!-- Left Section: Image -->
+    <div class="col-md-6 p-4">
+      <img src="image2.png" alt="Image" class="img-fluid custom-image" />
+    </div>
+
+    <!-- Right Section: Card -->
+    <div class="col-md-6 p-4">
+      <div class="card custom-card shadow-lg p-4 rounded">
+        <p class="card-text">
+          Our courses are designed for busy professionals and students. Get
+          access to expert-led training, hands-on projects, and real-world
+          skills!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Title Underneath the Card -->
+<section class="text-center py-4">
+  <h2 class="skills-title">How It Works?</h2>
+</section>
+
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <!-- Grande carte avec 5 étapes -->
+    <div
+      class="maincard-container d-flex justify-content-center align-items-center"
+    >
+      <div class="maincard shadow-lg p-5">
+        <div class="card-body">
+          <div class="row justify-content-between">
+            <!-- Étape 1 - Acheter des Coins -->
+            <div class="col-md-2 step-card">
+              <div class="step-number">1</div>
+              <h5 class="step-title">Buy Coins</h5>
+              <p class="step-description">
+                Purchase coins securely via your wallet to unlock access to our
+                learning content.
+              </p>
+            </div>
+
+            <!-- Étape 2 - Choisir un produit -->
+            <div class="col-md-2 step-card">
+              <div class="step-number">2</div>
+              <h5 class="step-title">Choose a Course</h5>
+              <p class="step-description">
+                Explore our catalog and select the course or certification that
+                suits your goals.
+              </p>
+            </div>
+
+            <!-- Étape 3 - Utiliser les Coins -->
+            <div class="col-md-2 step-card">
+              <div class="step-number">3</div>
+              <h5 class="step-title">Spend Coins</h5>
+              <p class="step-description">
+                Use your coins to purchase the course — no credit card needed
+                after purchase!
+              </p>
+            </div>
+
+            <!-- Étape 4 - Accéder au contenu -->
+            <div class="col-md-2 step-card">
+              <div class="step-number">4</div>
+              <h5 class="step-title">Enroll & Learn</h5>
+              <p class="step-description">
+                Get instant access to videos, projects, and resources. Learn at
+                your pace, anytime.
+              </p>
+            </div>
+
+            <!-- Étape 5 - Obtenir la certification -->
+            <div class="col-md-2 step-card">
+              <div class="step-number">5</div>
+              <h5 class="step-title">Get Certified</h5>
+              <p class="step-description">
+                Complete your course and earn an official certificate to boost
+                your professional profile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-violet">
+  <img src="VIOLET.png" alt="Image" class="image-violet" />
+</div>
+<style>
+  .container-violet {
+    text-align: right;
+    z-index: -10000;
+  }
+
+  .image-violet {
+    width: 45%;
+    height: auto;
+    border-radius: 0px;
+    margin-top: -1500px;
+    margin-bottom: -100px;
+  }
+</style>
+<!-- Section FAQ -->
+<div
+  id="faq"
+  class="faq-section text-center d-flex justify-content-center align-items-center py-5"
+>
+  <h2 class="skills-title">Frequently Asked Questions</h2>
+</div>
+
+<!-- Carte contenant les questions FAQ -->
+<div class="faq-card">
+  <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+    <div class="question" (click)="toggleFAQ(i)">
+      <span class="question-text">{{ faq.question }}</span>
+      <span class="arrow">
+        <i
+          class="bi"
+          [ngClass]="faq.isOpen ? 'bi-chevron-up' : 'bi-chevron-down'"
+        ></i>
+      </span>
+    </div>
+    <div class="answer" *ngIf="faq.isOpen">
+      {{ faq.answer }}
+    </div>
+    <div class="line"></div>
+  </div>
+</div>
+
+<div class="image-containerronde">
+  <img src="ronde2.png" alt="Image" class="section-imageronde" />
+</div>
+<style>
+  .image-containerronde {
+    flex: 1;
+    padding-right: 30px;
+    z-index: -10000;
+  }
+
+  .section-imageronde {
+    width: 50%;
+    height: auto;
+    border-radius: 0px;
+    margin-top: -4000px;
+    margin-left: -90px;
+    z-index: -5000;
+  }
+</style>
+
+<div class="container-l">
+  <img src="l.png" alt="Image" class="image-l" />
+</div>
+
+<style>
+  .container-cube {
+    text-align: right;
+    z-index: -1;
+  }
+
+  .image-cube {
+    width: 45%;
+    height: auto;
+    border-radius: 0px;
+    margin-top: -450px;
+    margin-bottom: -160px;
+  }
+
+  .container-l {
+    position: relative;
+    z-index: 0;
+    height: 100%;
+  }
+
+  .image-l {
+    position: absolute;
+    right: 0;
+    top: -1050px;
+    width: 40%;
+    height: auto;
+    z-index: -50000 !important;
+  }
+</style>
+
+<div class="container-cube">
+  <img src="cube.png" alt="Image" class="image-cube" />
+</div>
+
+<div class="image-containerx">
+  <img src="X.png" alt="Image" class="section-imagex" />
+</div>
+<style>
+  .image-containerx {
+    flex: 1;
+    padding-right: 30px;
+    z-index: -10000;
+  }
+
+  .section-imagex {
+    width: 40%;
+    height: auto;
+    border-radius: 0px;
+    margin-top: -1450px;
+    margin-left: -0px;
+    z-index: -5000;
+  }
+</style>
+
+<!-- Footer -->
+<footer class="custom-footer">
+  <div class="footer-container">
+    <span class="footer-text">© 2025 Clevory. All rights reserved.</span>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/ClevoryTraining/"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://www.instagram.com/clevorytraining/?hl=en"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@clevory"
+        ><i class="fab fa-youtube"></i
+      ></a>
+      <a href="https://www.linkedin.com/school/clevory-training/"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a href="#"><i class="fab fa-threads"></i></a>
+    </div>
+  </div>
+</footer>

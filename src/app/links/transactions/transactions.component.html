@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <!-- Header section -->
+  <div class="header">
+    <div class="title">Transactions</div>
+    <div class="profile">
+      <!-- <img src="icone.png" alt="Profile" class="profile-image" /> -->
+      <i class="bi bi-person-circle fs-4 text-dark"></i>
+    </div>
+  </div>
+
+  <!-- Card section -->
+  <div class="card">
+    <div class="header-card">
+      <div class="transaction-history">
+        <i class="fa fa-exchange-alt"></i> Transaction History
+      </div>
+      <div class="right-section">
+        <div class="buttons">
+          <button class="filter-btn">
+            <i class="fa fa-filter"></i> Filter
+          </button>
+          <button class="export-btn">
+            <i class="fa fa-download"></i> Export
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinner affiché pendant le chargement -->
+    <div *ngIf="loading" class="text-center my-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Table affichée seulement quand loading = false -->
+    <table *ngIf="!loading" class="transactions-table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" /></th>
+          <th>Transaction</th>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td><input type="checkbox" /></td>
+          <td class="transaction-cell">
+            <img [src]="transaction.icon" alt="Icon" class="transaction-icon" />
+            <div>
+              <div class="transaction-name">{{ transaction.name }}</div>
+              <div class="transaction-subtext">{{ transaction.subtext }}</div>
+            </div>
+          </td>
+          <td>{{ transaction.date }}</td>
+          <td>{{ transaction.category }}</td>
+          <td
+            [ngClass]="{
+              'status-completed': transaction.status === 'Completed',
+              'status-pending': transaction.status === 'Pending'
+            }"
+          >
+            <span class="status-text">{{ transaction.status }}</span>
+          </td>
+          <td>{{ transaction.amount }} CT</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination affichée seulement quand loading = false -->
+    <div *ngIf="!loading" class="pagination">
+      <div class="showing">Showing 1 to 5 of 8 transactions</div>
+      <div class="pagination-buttons">
+        <button class="prev-btn"><i class="fa fa-chevron-left"></i></button>
+        <button class="page-btn current-page">1</button>
+        <button class="page-btn next-page">2</button>
+        <button class="next-btn"><i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

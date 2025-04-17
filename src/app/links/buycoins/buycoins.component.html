@@ -1,0 +1,77 @@
+<div class="purchase-container">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="page-title mb-0">Purchase Coins</h2>
+    <i class="bi bi-person-circle fs-4 text-dark"></i>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Left: Purchase Card -->
+    <div class="purchase-card">
+      <h5 class="card-title">
+        <img src="purshase.png" alt="Coin Icon" class="coin-icon" />
+        Custom Purchase
+      </h5>
+      <p class="subtitle">Buy exactly the coins you need</p>
+
+      <label for="coinAmount" class="form-label">Number of Coins</label>
+      <div class="input-group">
+        <span class="input-group-text">
+          <img src="usdt.png" alt="Coin Icon" class="coin-icon" />
+        </span>
+        <input
+          type="text"
+          id="coinAmount"
+          class="form-control"
+          [(ngModel)]="coinAmount"
+          (input)="calculateTotal()"
+          placeholder="100"
+        />
+      </div>
+
+      <div class="total-price">
+        <span>
+          <img src="us.png" alt="Dollar Icon" class="currency-icon" />
+          Total price
+        </span>
+        <strong>{{ totalPrice.toFixed(2) }} Dinars</strong>
+      </div>
+
+      <ul class="benefits">
+        <li>
+          <i class="bi bi-check-circle text-success"></i> Coins added instantly
+          to your wallet
+        </li>
+        <li>
+          <i class="bi bi-check-circle text-success"></i> Transfer to other
+          users
+        </li>
+        <li>
+          <i class="bi bi-check-circle text-success"></i> Special offers access
+        </li>
+      </ul>
+
+      <button class="btn btn-purple" (click)="openModal()">
+        Proceed to Payment
+      </button>
+    </div>
+
+    <!-- Right: Wallet Card -->
+    <div class="wallet-card">
+      <div class="wallet-header">
+        <h5 class="wallet-title">CT Wallet</h5>
+        <div class="round-icon"></div>
+      </div>
+      <div class="wallet-body">
+        <p class="current-balance-title">Current Balance</p>
+        <div class="balance-container">
+          <p class="balance">{{ userBalance }}</p>
+          <img src="coin.png" class="coin" alt="Coin Icon" />
+        </div>
+      </div>
+      <div class="wallet-footer">
+        <p style="z-index: 1000">Available to transfer</p>
+      </div>
+      <img src="walletback.png" class="wallet-small-img" alt="Small Image" />
+    </div>
+  </div>
+</div>

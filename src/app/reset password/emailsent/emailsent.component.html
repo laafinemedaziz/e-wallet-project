@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card p-4 shadow" style="max-width: 700px; width: 100%">
+    <h3 class="text-center fw-bold">Reset your password</h3>
+    <p class="text-center text-muted">
+      Enter your email address and we'll send you a link to reset your password
+    </p>
+
+    <div
+      class="d-flex justify-content-center mt-3"
+      *ngIf="resetStatus !== null"
+    >
+      <div
+        class="custom-alert w-75 text-start"
+        [ngClass]="{
+          'alert-success': resetStatus === true,
+          'alert-error': resetStatus === false
+        }"
+      >
+        <strong *ngIf="resetStatus">Check your email</strong>
+        <strong *ngIf="!resetStatus">Erreur</strong><br />
+        <span *ngIf="resetStatus">
+          We've sent a password reset link to your email address. Please check
+          your inbox and follow the instructions.
+        </span>
+        <span *ngIf="!resetStatus">
+          {{ errorMessage }}
+        </span>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <a
+        routerLink="/"
+        class="text-decoration-none"
+        style="color: #a272fb; cursor: pointer"
+        >Return to home</a
+      >
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    border-radius: 1rem;
+  }
+
+  .custom-alert {
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: #000000;
+  }
+
+  .alert-success {
+    background-color: #04a421;
+    color: #000000;
+  }
+
+  .alert-error {
+    background-color: #ffdada;
+    color: #000000;
+  }
+</style>

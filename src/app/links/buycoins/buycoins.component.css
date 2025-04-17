@@ -1,0 +1,336 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+
+.purchase-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.page-title {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Purchase Card Styles */
+.purchase-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    /* Inter Semi-Bold */
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000000;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    /* Inter Medium */
+    font-size: 16px;
+    color: #767676;
+    margin-top: -20px;
+    /* Réduit l'espace entre le titre et le sous-titre */
+    margin-bottom: 20px;
+}
+
+/* Form Label Styles */
+.form-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    /* Inter Semi-Bold */
+    margin-top: 4px;
+    /* Réduit l'espace entre le label et l'input */
+    font-size: 22px;
+}
+
+/* Input Group Styles */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    /* Réduit l'espacement autour de l'input */
+}
+
+.input-group-text {
+    background: tras;
+    border: 1px solid #ced4da;
+    border-radius: 8px 0 0 8px;
+    padding: 10px 14px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+}
+
+/* Total Price Styles */
+.total-price {
+    background: #f5f5f5;
+    /* Fond gris clair */
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #1f2937;
+    font-size: 18px;
+}
+
+/* Benefits List Styles */
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.benefits li {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    /* Inter Regular */
+    font-size: 16px;
+    margin-top: 6px;
+}
+
+.benefits i {
+    margin-right: 12px;
+}
+
+/* Button Styles */
+.btn-purple {
+    background: #8b5cf6;
+    color: white;
+    font-weight: 500;
+    padding: 8px 18px;
+    /* Réduit la hauteur du bouton */
+    border: none;
+    border-radius: 12px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.btn-purple:hover {
+    background: #a78bfa;
+    color: white;
+}
+
+.btn-purple:active {
+    background: #a78bfa;
+    color: white;
+}
+
+/* Wallet Card */
+.wallet-card {
+    background: linear-gradient(to top left, #C800FA, #C269FC, #DACCD3);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 160px;
+    position: relative;
+    /* Permet de positionner l’image par rapport à cette div */
+    overflow: hidden;
+    /* Évite les débordements */
+
+}
+
+.wallet-small-img {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 100%;
+    /* Ajuste la taille */
+    height: auto;
+    z-index: 0;
+}
+
+/* Header */
+.wallet-header {
+    display: flex;
+    justify-content: space-between;
+    /* Assure que les éléments sont à chaque extrémité */
+    align-items: flex-start;
+    /* Aligne les éléments en haut */
+    position: relative;
+    /* Nécessaire pour positionner le rond */
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+
+.wallet-header h5 {
+    font-family: 'Inter', sans-serif;
+    margin-left: -65px;
+    cursor: pointer;
+
+}
+
+.round-icon {
+    background: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -3px;
+    z-index: 1000;
+    margin-right: -50px;
+
+}
+
+/* Balance Section */
+.wallet-body {
+    text-align: center;
+    z-index: 1000;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.current-balance-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    /* Aligner les éléments verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
+    gap: 5px;
+    /* Réduire l’espace entre le texte et l’icône */
+    z-index: 1000;
+
+}
+
+.balance {
+    font-size: 24px;
+    margin: 0;
+    /* Supprimer tout espace vertical inutile */
+    margin-right: 10px;
+    font-family: 'Inter', sans-serif;
+    z-index: 1000;
+    cursor: pointer;
+
+
+
+}
+
+.coin {
+    width: 33px;
+    height: 33px;
+    margin: 0;
+    /* Supprimer toute marge par défaut */
+    display: inline-block;
+    /* S'assurer qu'il reste bien en ligne */
+    z-index: 1000;
+    cursor: pointer;
+
+
+}
+
+.wallet-footer {
+    display: flex;
+    gap: 8px;
+    /* Réduit l'espace entre les icônes */
+    justify-content: center;
+    /* Centre les éléments sans trop d'écart */
+    margin-top: 10px;
+    /* Réduit la marge du haut */
+    text-align: center;
+    z-index: 5000;
+    cursor: pointer;
+
+}
+
+/* Custom Styles for Icons */
+.coin-icon {
+    width: 24px;
+    /* Ajuster la taille selon vos besoins */
+    height: 24px;
+    margin-right: 8px;
+    /* Espacement à droite de l'icône */
+    cursor: pointer;
+
+}
+
+.currency-icon {
+    width: 20px;
+    /* Ajuster la taille de l'icône de la devise */
+    height: 20px;
+    margin-right: 8px;
+    /* Espacement à droite de l'icône */
+    cursor: pointer;
+
+}
+
+/* Rest of the styles */
+.purchase-card .card-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000000;
+}
+
+.total-price {
+    background: #f5f5f5;
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #1f2937;
+    font-size: 18px;
+}

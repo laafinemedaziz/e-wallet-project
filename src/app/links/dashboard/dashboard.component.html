@@ -1,0 +1,173 @@
+<div
+  class="container-fluid w-100"
+  style="background-color: transparent; width: 100vw"
+>
+  <!-- Header -->
+  <div class="header d-flex justify-content-between align-items-center p-3">
+    <h2 class="hello-text">Hello, {{ userName }}</h2>
+    <div class="header-icons d-flex align-items-center">
+      <i class="bi bi-bell notification-icon"></i>
+      <!-- <img src="icone.png" class="profile-pic" alt="Profile Picture" /> -->
+      <i class="bi bi-person-circle fs-4 text-dark"></i>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Première colonne 8/12 -->
+    <div class="col-md-8">
+      <div class="dashboard-card">
+        <div class="text-section">
+          <p>Every coin is a step closer <br />to your next skill.</p>
+        </div>
+        <div class="image-section">
+          <img src="petit.png" alt="Illustration" class="illustration" />
+        </div>
+        <div class="image-icon-section">
+          <img
+            src="transa.png"
+            alt="Wallet Icon"
+            class="image-icon wallet-icon"
+          />
+        </div>
+      </div>
+
+      <div
+        class="d-flex align-items-center mt-3"
+        style="margin-bottom: 15px; min-width: 95%"
+      >
+        <h4 class="transactions-title">Latest Transactions</h4>
+        <a class="see-all ms-auto" (click)="triggerSeeAll()">See All</a>
+      </div>
+
+      <!-- Liste des transactions -->
+      <div class="transactions-list">
+        <div class="transaction-card" *ngFor="let transaction of transactions">
+          <img src="logo.png" class="transaction-logo" alt="Transaction Logo" />
+          <div class="transaction-info">
+            <p class="transaction-name">{{ transaction.name }}</p>
+            <p class="transaction-date">{{ transaction.date }}</p>
+          </div>
+          <div class="transaction-amount">
+            <p class="amount-ct">{{ transaction.amount }} CT</p>
+            <p class="amount-dt">{{ transaction.amount * 0.2 }} DT</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transfer Inputs -->
+      <h4 class="transfer-title">Transfer Calculator</h4>
+      <div class="transfer-card" style="margin-bottom: 50px">
+        <div class="input-container">
+          <input
+            type="text"
+            [(ngModel)]="tndAmount"
+            (input)="convertToCT()"
+            class="transfer-input"
+          />
+          <img src="flag.png" alt="Tunisia Flag" class="flag-icon" />
+          <span class="currency-text">TND</span>
+        </div>
+
+        <!-- Image équivalente -->
+        <div class="image-divider">
+          <img src="equi.png" alt="Equivalent Icon" class="Equivalent" />
+        </div>
+
+        <div class="input-container">
+          <input
+            type="text"
+            [value]="ctAmount"
+            [(ngModel)]="ctAmount"
+            class="transfer-input"
+          />
+          <img src="coin.png" alt="Coin Icon" class="coin-icon" />
+          <span class="currency-text">CT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deuxième colonne 4/12 (Cartes à droite) -->
+    <div class="col-md-4 d-flex flex-column align-items-end">
+      <div class="row w-100">
+        <!-- Première carte -->
+        <div class="col-xs-12 mb-3">
+          <div class="info-card">
+            <div class="card-header">
+              <button class="edit-btn"><i class="bi bi-pen"></i></button>
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
+              <img src="icone.png" class="profile-icon" alt="Profile Icon" />
+              <p class="full-name">{{ userName }}</p>
+              <p class="user-type">{{ userType }}</p>
+              <p class="email">{{ userEmail }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deuxième carte -->
+        <div class="col-xs-12 mb-3">
+          <div class="wallet-card">
+            <div class="wallet-header">
+              <h5 class="wallet-title">CT Wallet</h5>
+              <div class="round-icon"></div>
+            </div>
+            <div class="wallet-body">
+              <p class="current-balance-title">Current Balance</p>
+              <div class="balance-container">
+                <p class="balance" title="Your Balance">{{ userBalance }}</p>
+                <img src="coin.png" class="coin" alt="Coin Icon" />
+              </div>
+            </div>
+            <div class="wallet-footer">
+              <!-- Si le user est client ou hrcompany -->
+              <ng-container
+                *ngIf="
+                  userType === 'client' || userType === 'hrcompany';
+                  else employeeView
+                "
+              >
+                <div
+                  class="wallet-action"
+                  (click)="goToBuyCoins()"
+                  title="Buy Coins"
+                >
+                  <i class="fa fa-plus"></i>
+                </div>
+                <div
+                  *ngIf="userType == 'hrcompany'"
+                  class="wallet-action"
+                  (click)="goToTransfer()"
+                  title="Transfer"
+                >
+                  <i class="bi bi-send-fill"></i>
+                </div>
+                <div
+                  class="wallet-action"
+                  (click)="goToTransactions()"
+                  title="View Transactions"
+                >
+                  <i class="fa fa-exchange-alt"></i>
+                </div>
+              </ng-container>
+
+              <!-- Vue alternative pour l'employé -->
+              <ng-template #employeeView>
+                <div
+                  class="text-center w-100"
+                  style="color: rgb(255, 255, 255)"
+                >
+                  Balance available
+                </div>
+              </ng-template>
+            </div>
+            <img
+              src="walletback.png"
+              class="wallet-small-img"
+              alt="Small Image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

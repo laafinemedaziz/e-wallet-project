@@ -1,0 +1,114 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <!-- Menu gauche -->
+    <div class="col-md-2 h-100 p-0">
+      <div class="nav-card h-100 d-flex flex-column p-3">
+        <!-- Logo -->
+        <div class="d-flex align-items-center mb-4">
+          <div class="circle-logo me-3">
+            <i class="bi bi-credit-card fs-4 text-white"></i>
+          </div>
+          <span class="titre text-white fs-5">Clevory</span>
+        </div>
+
+        <!-- Liens du menu -->
+        <div
+          class="nav-links flex-grow-1 d-flex flex-column justify-content-center align-items-start"
+        >
+          <ul class="list-unstyled">
+            <li>
+              <a
+                routerLink="dashboard"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-grid fs-6"></i>
+                <span class="ms-2">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="transactions"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-arrow-left-right fs-6"></i>
+                <span class="ms-2">Transactions</span>
+              </a>
+            </li>
+            <!-- Transfer - Visible uniquement si userType est 'hrcompany' -->
+            <li *ngIf="isHrCompany()">
+              <a
+                routerLink="transfer"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-send fs-6"></i>
+                <span class="ms-2">Transfer</span>
+              </a>
+            </li>
+            <!-- Buy Coins - Visible si userType est 'hrcompany' OU 'client' -->
+            <li *ngIf="isHrCompany() || isClient()">
+              <a
+                routerLink="buyCoins"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-coin fs-6"></i>
+                <span class="ms-2">Buy Coins</span>
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="notifications"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-bell fs-6"></i>
+                <span class="ms-2">Notifications</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Liens bas -->
+        <div class="nav-links mt-auto">
+          <ul class="list-unstyled">
+            <li>
+              <a
+                routerLink="settings"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="d-flex align-items-center py-2 nav-item-link"
+              >
+                <i class="bi bi-gear fs-6"></i>
+                <span class="ms-2">Settings</span>
+              </a>
+            </li>
+            <li>
+              <a
+                (click)="logout()"
+                class="d-flex align-items-center text-white py-2"
+              >
+                <i class="bi bi-box-arrow-right fs-6"></i>
+                <span class="ms-2">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="col-md-10 h-100">
+      <div class="content-area h-100">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

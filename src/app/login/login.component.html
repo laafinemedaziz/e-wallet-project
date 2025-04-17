@@ -1,0 +1,173 @@
+<!-- <header
+  class="login-header-bar d-flex justify-content-between align-items-center px-4 py-2"
+>
+  <div class="logo d-flex align-items-center">
+    <img src="clevory-logo.png" alt="Logo" class="me-2" />
+    <span class="fw-bold text-dark fs-5">Clevory</span>
+  </div>
+
+  <button
+    class="btn btn-outline-dark rounded-circle btn-close-header"
+    (click)="goHome()"
+    aria-label="Close"
+  >
+    <i class="bi bi-x-lg"></i>
+  </button>
+</header> -->
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <!-- Card Container -->
+  <div class="card shadow-lg custom-card">
+    <div class="row no-gutters">
+      <!-- Section Image (gauche) -->
+      <div class="col-md-4 position-relative">
+        <img
+          src="rocket.png"
+          alt="Background"
+          class="img-fluid blurred-image"
+        />
+      </div>
+
+      <!-- Section Formulaire (droite) -->
+      <div
+        class="col-md-7 d-flex align-items-center justify-content-center p-5 bg-light rounded-end"
+      >
+        <div class="w-100">
+          <!-- Title -->
+          <h3 class="text-dark text-start mb-4 login-header">Log In</h3>
+
+          <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+            <!-- Toast d'erreur -->
+            <!-- Toast d'erreur -->
+            <div
+              *ngIf="errorMessages.length > 0"
+              class="toast-container position-fixed top-0 end-0 p-3"
+            >
+              <div
+                class="toast text-bg-danger show"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div class="toast-body">
+                  <div class="d-flex gap-3 align-items-center">
+                    <i class="fa-solid fa-circle-exclamation fa-lg"></i>
+                    <div
+                      class="flex-grow-1 d-flex justify-content-between align-items-center"
+                    >
+                      <!-- Affiche tous les messages -->
+                      <div class="fw-semibold">
+                        <div *ngFor="let message of errorMessages">
+                          {{ message }}
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        aria-label="Close"
+                        (click)="errorMessages = []"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="email" class="form-label text-start"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control input-field"
+                id="email"
+                name="email"
+                [(ngModel)]="loginData.email"
+                placeholder="xyz@example.com"
+                required
+                #emailField="ngModel"
+                email
+              />
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label for="password" class="form-label text-start"
+                >Password</label
+              >
+              <div class="input-container position-relative">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  class="form-control input-field"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="loginData.password"
+                  placeholder="*************"
+                  required
+                  #passwordField="ngModel"
+                />
+                <i
+                  class="bieye"
+                  [ngClass]="{
+                    'bi-eye-slash': !showPassword,
+                    'bi-eye': showPassword
+                  }"
+                  (click)="showPassword = !showPassword"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="d-flex justify-content-end">
+              <a routerLink="/enteremail" class="forgot-password text-end"
+                >Forgot Password?</a
+              >
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button mt-4">
+              <button
+                type="submit"
+                class="btn btn-primary w-100 login-btn mb-2"
+              >
+                Log In
+              </button>
+
+              <!-- Or -->
+              <div class="text-center my-2">Or</div>
+
+              <!-- Continue with Google -->
+              <button
+                type="button"
+                class="btn btn-outline-dark w-100 continue-google-btn mb-2"
+              >
+                <img
+                  src="google (1).png"
+                  alt="Google"
+                  class="me-2"
+                  style="width: 15px; height: auto; margin-right: 10px"
+                />
+                Continue with Google
+              </button>
+
+              <!-- Sign Up Link -->
+              <div class="text-center mt-2">
+                <p style="font-size: 12px; color: #676767; display: inline">
+                  New to Clevory?
+                </p>
+                <a
+                  routerLink="/signup"
+                  class="signup"
+                  style="font-size: 12px; color: #171717; font-weight: bold"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

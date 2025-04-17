@@ -1,0 +1,447 @@
+<div class="transfer-container">
+  <div class="transfer-header">
+    <h1 class="header-title">Transfer</h1>
+    <!-- <img src="icone.png" alt="Profile" class="profile-icon" /> -->
+    <i class="bi bi-person-circle fs-4 text-dark"></i>
+  </div>
+
+  <div class="transfer-content">
+    <!-- Left Side (Transfer Form) -->
+    <div class="transfer-card expanded">
+      <div class="transfer-title">
+        <i class="bi bi-send send-icon"></i>
+        <h3>Send Coins</h3>
+      </div>
+      <p class="transfer-subtitle">Transfer coins to another user's account</p>
+
+      <!-- Toasts en haut à droite -->
+      <div
+        class="toast-container position-fixed top-0 end-0 p-3 z-3"
+        style="z-index: 1055"
+      >
+        <!-- Toast d'erreur -->
+        <div
+          *ngIf="errorMessages.length > 0"
+          class="toast text-bg-danger show"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-body">
+            <div class="d-flex gap-3 align-items-center">
+              <i class="fa-solid fa-circle-exclamation fa-lg"></i>
+              <div
+                class="flex-grow-1 d-flex justify-content-between align-items-center"
+              >
+                <div class="fw-semibold">
+                  <div *ngFor="let message of errorMessages">
+                    {{ message }}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  aria-label="Close"
+                  (click)="errorMessages = []"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast de succès -->
+        <div
+          *ngIf="successMessage"
+          class="toast text-bg-success show mt-2"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-body">
+            <div class="d-flex gap-3 align-items-center">
+              <i class="fa-solid fa-circle-check fa-lg"></i>
+              <div
+                class="flex-grow-1 d-flex justify-content-between align-items-center"
+              >
+                <div class="fw-semibold">
+                  {{ successMessage }}
+                </div>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  aria-label="Close"
+                  (click)="successMessage = ''"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+        <!-- Recipient User ID -->
+        <div class="form-group mb-3">
+          <label for="recipient-id" class="form-label">
+            <h5>Recipient User ID</h5>
+          </label>
+          <div class="input-with-icon">
+            <i class="bi bi-person"></i>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-id"
+              placeholder="Enter Recipient ID"
+              formControlName="recipientId"
+            />
+          </div>
+        </div>
+
+        <!-- Amount -->
+        <div class="form-group mb-3">
+          <label for="amount" class="form-label"><h5>Amount</h5></label>
+          <div class="input-with-icon">
+            <i class="currency-icon">$</i>
+            <input
+              type="text"
+              class="form-control"
+              id="amount"
+              placeholder="0.00"
+              formControlName="amount"
+            />
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group mb-3">
+          <label for="description" class="form-label">
+            <h5>Description (Optional)</h5>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            placeholder="What’s this transfer for?"
+            formControlName="description"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="send-button">
+            {{ isLoading ? "Sending..." : "Send Coins" }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Right Side (Two Independent Cards) -->
+    <div class="right-side col-md-4 d-flex flex-column align-items-end gap-3">
+      <!-- Card 1: Recent Transfers -->
+      <div class="info-card w-100">
+        <div class="card-header">
+          <h5 class="recent-title mb-0">Recent Transfers</h5>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="recentTransfers.length > 0; else noTransfers">
+            <div *ngFor="let transfer of recentTransfers" class="mb-2">
+              <div class="transfer-item d-flex justify-content-between">
+                <div class="transfer-info">
+                  <p class="employee-name mb-0">{{ transfer.recipientName }}</p>
+                  <p class="transfer-date text-muted mb-0">
+                    {{ transfer.date | date : "yyyy-MM-dd" }}
+                  </p>
+                </div>
+                <p class="transfer-amount text-danger mb-0">
+                  -{{ transfer.amount }} CT
+                </p>
+              </div>
+              <hr class="divider my-2" />
+            </div>
+          </ng-container>
+          <ng-template #noTransfers>
+            <p class="text-muted text-center">No recent transfers found.</p>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Card 2: CT Wallet -->
+      <div
+        class="wallet-card-custom p-3 text-white d-flex flex-column justify-content-between position-relative"
+      >
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5
+            class="mb-0"
+            style="font-family: 'Inter', sans-serif; font-weight: 500"
+          >
+            CT Wallet
+          </h5>
+          <div
+            class="rounded-circle bg-white"
+            style="width: 1.5rem; height: 1.5rem"
+          ></div>
+        </div>
+
+        <!-- Body -->
+        <div class="text-center mb-2" style="margin-top: 10px; z-index: 10">
+          <small class="text-white" style="opacity: 1; font-size: 0.7rem">
+            Current Balance
+          </small>
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 mt-1"
+            style="
+              font-size: 1.75rem;
+              font-weight: 400;
+              margin-top: -5px !important;
+              margin-right: 5px;
+              z-index: 10;
+            "
+          >
+            {{ userBalance }}
+            <img
+              src="coin.png"
+              alt="Coin"
+              style="
+                width: 1.85rem;
+                height: 1.85rem;
+                object-fit: contain;
+                z-index: 10;
+              "
+            />
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+          class="text-center text-white mt-auto"
+          style="
+            font-size: 1rem;
+            font-family: 600;
+            z-index: 5;
+            margin-top: 10px !important;
+            z-index: 10;
+          "
+        >
+          Available to transfer
+        </div>
+
+        <!-- Decorative Image -->
+        <img
+          src="walletback.png"
+          alt="Decoration"
+          class="wallet-image-bottom"
+        />
+        <style>
+          .wallet-image-bottom {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 100%;
+            /* Ajuste la taille */
+            height: auto;
+            z-index: 0;
+          }
+        </style>
+      </div>
+
+      <style>
+        .wallet-card-custom {
+          background: linear-gradient(to top left, #c800fa, #c269fc, #daccd3);
+          color: white;
+          border-radius: 12px;
+          padding: 20px;
+          padding-left: 80px;
+          padding-right: 80px;
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+          min-height: 160px;
+          position: relative;
+          /* Permet de positionner l’image par rapport à cette div */
+          overflow: hidden;
+          /* Évite les débordements */
+          width: 86%;
+        }
+
+        .info-card {
+          background-color: white;
+          border-radius: 0.75rem;
+          padding: 1rem;
+          width: 100%;
+          max-width: 18rem; /* équivaut à ~288px */
+          min-height: 9rem; /* équivaut à ~144px */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajout de style pour l'alerte et les messages d'erreur */
+        .transfer-container {
+          width: 90%;
+          margin: auto;
+        }
+
+        .transfer-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-radius: 10px;
+          margin-bottom: 30px;
+        }
+
+        .header-title {
+          font-size: 45px;
+          font-weight: 500;
+          margin: 0;
+          color: black;
+        }
+
+        /* .profile-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        } */
+
+        .transfer-content {
+          display: flex;
+          gap: 20px;
+        }
+
+        .transfer-card.expanded {
+          flex: 3;
+          background: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          border: 1px solid #d2d9e0;
+        }
+
+        .transfer-title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+        }
+
+        .send-icon {
+          font-size: 24px;
+          color: black;
+        }
+
+        .transfer-subtitle {
+          color: #767676;
+          font-size: 14px;
+          margin-top: -10px;
+          margin-bottom: 20px;
+        }
+
+        .form-label h5 {
+          margin-bottom: 5px;
+        }
+
+        .input-with-icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .input-with-icon i {
+          position: absolute;
+          left: 12px;
+          color: #999999;
+          font-size: 18px;
+        }
+
+        .form-control {
+          border-radius: 8px;
+          border: 1px solid #999999;
+          background: white;
+          color: #999999;
+          font-size: 16px;
+          padding-left: 35px;
+          width: 100%;
+        }
+
+        #description.form-control {
+          padding-left: 15px; /* Spécifique à l'input sans icône */
+        }
+
+        .send-button {
+          width: 100%;
+          padding: 8px; /* Réduction de la hauteur */
+          background: #a272fb;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+        }
+
+        .recent-transfers.minimized {
+          flex: 1;
+          background: white;
+          padding: 15px 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          max-height: 200px;
+          overflow-y: auto;
+        }
+
+        .form-group.mb-3 {
+          margin-bottom: 30px !important; /* Augmenter l'espace entre les groupes de formulaires */
+        }
+
+        .transfer-list {
+          padding: 0;
+          margin: 0;
+        }
+
+        .recent-title {
+          color: black;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        .transfer-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5px 0;
+          margin-bottom: 5px;
+        }
+
+        .employee-name {
+          font-size: 16px;
+          font-weight: 500;
+          color: black;
+        }
+
+        .transfer-date {
+          font-size: 13px;
+          color: #767676;
+        }
+
+        .transfer-info p {
+          margin: 0;
+        }
+
+        .transfer-amount {
+          font-size: 15px;
+          font-weight: 500;
+          color: #fa3939;
+        }
+
+        .divider {
+          border-top: 1px solid #767676;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+
+        .transfer-item:last-child .divider {
+          display: none;
+        }
+      </style>
+    </div>
+  </div>
+</div>
