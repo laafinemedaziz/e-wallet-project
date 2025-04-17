@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SignupService } from '../services/signup.service';
 import { Router } from '@angular/router';
+import { User } from '../model/class/user';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,7 @@ export class SignupComponent {
     email: '',
     password: '',
     confirmPassword: '',
-    type: 'client',
+    type: 'learner',
     companyCode: '',
     termsAccepted: false,
   };
@@ -142,7 +143,7 @@ export class SignupComponent {
       return;
     }
 
-    this.signupService.createUser(this.user).subscribe(
+    this.signupService.createUser(new User(this.user.name,this.user.email,this.user.type,this.user.companyCode,this.user.password)).subscribe(
       (response) => {
         console.log('Utilisateur créé avec succès:', response);
         this.router.navigate(['/login']);
